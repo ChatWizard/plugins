@@ -35,6 +35,7 @@ impl Host for MyHost {
             let cmd = format!("git commit -m \"{}\"", result);
             println!("Executing: {cmd}");
             host_exec(&cmd);
+            println!("Done!");
         }
     }
 }
