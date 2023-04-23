@@ -2,6 +2,7 @@
   {
     "name": "commit-summary",
     "version": "0.0.1",
+    "description": "Commit Summary",
     "author": "Lisiur Day<lisiurday@gmail.com>",
     "url": "https://ChatWizard/chat-wizard-plugins/commit-summary/built/commit-summary.wasm",
     "readme": "https://ChatWizard/chat-wizard-plugins/commit-summary/README.md",

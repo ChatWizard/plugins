@@ -18,6 +18,11 @@ impl Host for MyHost {
         let prompt = format!("{prompt}\n {output}");
         let (code, result) = host_openai(&prompt);
 
+        if code != 0 {
+            println!("Error: {}", result);
+            return;
+        }
+
         host_loading(false);
 
         let options = result
@@ -27,8 +32,9 @@ impl Host for MyHost {
 
         let result = host_select(&options);
         if let Some(result) = result {
-            // host_exec(&format!("git commit -m \"{}\"", result));
-            println!("Code: {}\nResult: {}", code, result);
+            let cmd = format!("git commit -m \"{}\"", result);
+            println!("Executing: {cmd}");
+            host_exec(&cmd);
         }
     }
 }
