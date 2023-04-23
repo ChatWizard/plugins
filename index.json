@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "description": "Commit Summary",
     "author": "Lisiur Day<lisiurday@gmail.com>",
-    "url": "https://github.com/ChatWizard/chat-wizard-plugins/blob/main/plugins/commit-summary/built/commit_summary.wasm",
+    "url": "https://raw.githubusercontent.com/ChatWizard/chat-wizard-plugins/main/plugins/commit-summary/built/commit_summary.wasm",
     "readme": "https://raw.githubusercontent.com/ChatWizard/chat-wizard-plugins/main/plugins/commit-summary/README.md",
     "homepage": "https://ChatWizard/chat-wizard-plugins/commit-summary"
   }
