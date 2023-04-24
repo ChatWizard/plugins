@@ -13,5 +13,7 @@ jobs:
         with:
           node-version: '16.x'
       - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-wasi
       - run: |
           node build.js
