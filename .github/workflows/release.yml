@@ -34,16 +34,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - run: |
-          mkdir -p plugins
       - uses: actions/download-artifact@v3
         with:
           name: index
-          path: index.json
+          path: _index.json
       - uses: actions/download-artifact@v3
         with:
           name: built
-          path: plugins
+          path: _plugins
+
+      - run: |
+          mv _index.json index.json
+          mkdir -p plugins
+          mv cp -r _plugins/* plugins/
+
+          rm _index.json
+          rm -rf _plugins
           
       - uses: peaceiris/actions-gh-pages@v3
         with:
