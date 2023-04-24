@@ -16,4 +16,6 @@ jobs:
         with:
           targets: wasm32-wasi
       - run: |
+          cargo install wasm-tools
+      - run: |
           node build.js
