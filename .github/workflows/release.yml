@@ -29,6 +29,8 @@ jobs:
           path: built/
   
   deploy:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     needs: [build]
 
