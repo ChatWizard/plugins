@@ -19,3 +19,8 @@ jobs:
           cargo install wasm-tools
       - run: |
           node build.js
+      - uses: actions/upload-artifact@v3
+        with:
+          name: built
+          path: built/
+      
