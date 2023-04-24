@@ -44,6 +44,7 @@ jobs:
           path: _plugins
 
       - run: |
+          pwd
           mv _index.json index.json
           mkdir -p plugins
           cp -r _plugins/* plugins/
