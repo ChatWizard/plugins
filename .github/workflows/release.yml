@@ -44,12 +44,9 @@ jobs:
           path: _plugins
 
       - run: |
-          pwd
           mv _index.json index.json
           mkdir -p plugins
-          cp -r _plugins/* plugins/
-
-          rm _index.json
+          mv -r _plugins/* plugins/
           rm -rf _plugins
           
       - uses: peaceiris/actions-gh-pages@v3
