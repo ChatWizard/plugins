@@ -39,16 +39,13 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: index
-          path: _index.json
       - uses: actions/download-artifact@v3
         with:
           name: built
           path: _plugins
 
       - run: |
-          mv _index.json index.json
           mkdir -p plugins
-          ls _plugins
           cp -r _plugins/* plugins/
           rm -rf _plugins
           
