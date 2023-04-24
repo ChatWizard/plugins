@@ -2,11 +2,11 @@ wit_bindgen::generate!({
     path: "../../wit"
 });
 
-struct MyHost;
+struct Plugin;
 
-impl Host for MyHost {
+impl Host for Plugin {
     fn run() {
-        let (status, output) = host_exec("git diff --cached");
+        let (status, output) = host_exec("git", &["diff", "--cached"]);
         if status != 0 {
             println!("Error: {}", output);
             return;
@@ -14,7 +14,7 @@ impl Host for MyHost {
 
         host_loading(true);
 
-        let prompt = r#"Suggest a few more commit messages for my changes (without explanations) following conventional commit (<type>: <subject>). I will give you the diff text and you give me the results as a list, not more than 6 items"#;
+        let prompt = r#"Suggest a few more commit messages for my changes (without explanations) following conventional commit (<type>: <subject>). I will give you the diff text and you give me the results as a list, no more than 6 items"#;
         let prompt = format!("{prompt}\n {output}");
         let (code, result) = host_openai(&prompt);
 
@@ -32,12 +32,14 @@ impl Host for MyHost {
 
         let result = host_select(&options);
         if let Some(result) = result {
-            let cmd = format!("git commit -m \"{}\"", result);
-            println!("Executing: {cmd}");
-            host_exec(&cmd);
-            println!("Done!");
+            let (code, output) = host_exec("git", &["commit", "-m", &result]);
+            if code != 0 {
+                println!("Error: {}", output);
+            } else {
+                println!("Done!");
+            }
         }
     }
 }
 
-export_host!(MyHost);
+export_host!(Plugin);
