@@ -51,8 +51,9 @@ async function main() {
 
           const pluginIndex = {
             ...metadata,
-            readme: `https://raw.githubusercontent.com/ChatWizard/chat-wizard-plugins/main/plugins/${pluginDir}/README.md`,
-            homepage: `https://ChatWizard/chat-wizard-plugins/${pluginDir}`,
+            url: `https://chatwizard.github.io/plugins/plugins/${builtName}.wasm`,
+            readme: `https://raw.githubusercontent.com/ChatWizard/plugins/main/plugins/${pluginDir}/README.md`,
+            homepage: `https://ChatWizard/plugins/${pluginDir}`,
           };
           if (existIndex === -1) {
             index.push(pluginIndex);
