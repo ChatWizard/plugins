@@ -7,5 +7,14 @@
     "url": "https://chatwizard.github.io/plugins/plugins/commit_summary.wasm",
     "readme": "https://raw.githubusercontent.com/ChatWizard/plugins/main/plugins/commit-summary/README.md",
     "homepage": "https://ChatWizard/plugins/commit-summary"
+  },
+  {
+    "name": "chat",
+    "version": "0.1.0",
+    "description": "Chat",
+    "author": "Lisiur Day<lisiurday@gmail.com>",
+    "url": "https://chatwizard.github.io/plugins/plugins/chat.wasm",
+    "readme": "https://raw.githubusercontent.com/ChatWizard/plugins/main/plugins/chat/README.md",
+    "homepage": "https://ChatWizard/plugins/chat"
   }
 ]
